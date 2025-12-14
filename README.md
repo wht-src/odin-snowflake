@@ -3,7 +3,7 @@
 Generate Twitter like snowflake ID in Odin. These ID will never 
 repeat themselves as they are time-based.
 
-## useage
+## usage
 ```odin
 import sf "../odin_snowflake"
 
