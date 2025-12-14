@@ -86,16 +86,3 @@ mkflake :: proc(generator: ^Snowflake_Generator) -> u64 {
 
 	return transmute(u64)(flake)
 }
-
-main :: proc() {
-	fmt.println("the current time is", current_milli_epoch())
-	gen := make_generator(datacenter_id = 1, machine_id = 1)
-	defer free(gen)
-
-	for i in 1 ..= 100 {
-		flake := mkflake(gen)
-		fmt.println(flake)
-		// fmt.printfln("%b", flake)
-		// fmt.println(Snowflake(flake))
-	}
-}
